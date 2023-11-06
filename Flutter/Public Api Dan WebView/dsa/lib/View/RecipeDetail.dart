@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prak/Model/recipe.dart';
-import 'package:prak/View/Bookmark.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:prak/View/Bookmark.dart';
 
 class RecipeDetail extends StatelessWidget {
   final Recipe recipe;
@@ -178,7 +178,17 @@ class RecipeDetail extends StatelessWidget {
                           ),
                         ),
                       ],
+                    )
+                  else
+                  Center(
+                    child: Text(
+                      'No YouTube link available',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
+                  ),
                 ],
               ),
             ),

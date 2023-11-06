@@ -13,7 +13,7 @@ class RecipeController extends GetxController {
 
   Future<void> fetchRecipes() async {
     final response = await http.get(
-        Uri.parse('https://www.themealdb.com/api/json/v1/1/search.php?f=a'));
+        Uri.parse('https://www.themealdb.com/api/json/v1/1/search.php?f=b'));
 
     if (response.statusCode == 200) {
       final List<Map<String, dynamic>> data = List<Map<String, dynamic>>.from(
