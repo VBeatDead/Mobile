@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class Smalltext extends StatelessWidget{
   Color? color;
   final String text;
