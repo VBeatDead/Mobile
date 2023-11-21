@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "597088342040",
+    "project_id": "login-20603",
+    "storage_bucket": "login-20603.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:597088342040:android:7047b75a49f3acbb33b36d",
+        "android_client_info": {
+          "package_name": "com.example.prak"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSOfZ9OuU_rZiG9CDtvvNSfTB9P_o9x5A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
