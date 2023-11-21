@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prak/Controller/RecipeController.dart';
-import 'package:prak/View/RecipeDetail.dart';
+import 'package:prak/Controller/ThemeNotifier.dart';
+import 'package:prak/View/api/RecipeDetail.dart';
 import 'package:prak/Model/recipe.dart';
+import 'package:provider/provider.dart';
 
 class Setting extends StatefulWidget {
   @override
@@ -15,13 +17,17 @@ class _SettingState extends State<Setting> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 248, 241, 241),
+      backgroundColor: context.watch<ThemeNotifier>().isDarkMode
+          ? Color.fromARGB(66, 66, 66, 100)
+          : Color.fromARGB(255, 248, 241, 241),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 248, 241, 241),
+        backgroundColor: Colors.transparent,
         title: Text(
           'API',
           style: TextStyle(
-            color: Colors.black,
+            color: context.watch<ThemeNotifier>().isDarkMode
+                ? Colors.white
+                : Colors.black,
             fontWeight: FontWeight.bold,
             fontSize: 20,
           ),
@@ -65,7 +71,9 @@ class _SettingState extends State<Setting> {
                                 topRight: Radius.circular(20),
                                 bottomRight: Radius.circular(20),
                               ),
-                              color: Colors.white,
+                              color: context.watch<ThemeNotifier>().isDarkMode
+                                ? Colors.grey[800]
+                                : Colors.white,
                             ),
                             child: Padding(
                               padding: EdgeInsets.only(left: 10, right: 10),
@@ -73,7 +81,8 @@ class _SettingState extends State<Setting> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text(recipe['strMeal'] ?? '', style: TextStyle(fontSize: 17)),
+                                  Text(recipe['strMeal'] ?? '',
+                                      style: TextStyle(fontSize: 17)),
                                   SizedBox(height: 10),
                                   Text(recipe['strCategory'] ?? ''),
                                 ],
