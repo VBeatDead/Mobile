@@ -4,13 +4,17 @@ import 'package:get/get.dart';
 import 'package:prak/Controller/ThemeNotifier.dart';
 import 'package:prak/View/welcome/welcome.dart';
 import 'package:prak/firebase_options.dart';
+import 'package:prak/notification/notification_handler.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await Get.putAsync(() async => await SharedPreferences.getInstance());
+  await FirebaseMessagingHandler().initPushNotification();
   runApp(
     ChangeNotifierProvider(
       create: (context) => ThemeNotifier(),
