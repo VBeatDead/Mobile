@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:appwrite/appwrite.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -39,6 +40,8 @@ class _ProfileState extends State<Profile> {
       setState(() {
         _image = File(pickedFile.path);
       });
+
+      await uploadImageToAppwrite();
     }
   }
 
@@ -50,6 +53,8 @@ class _ProfileState extends State<Profile> {
       setState(() {
         _image = File(pickedFile.path);
       });
+
+      await uploadImageToAppwrite();
     }
   }
 
@@ -109,6 +114,38 @@ class _ProfileState extends State<Profile> {
         );
       },
     );
+  }
+
+  Future<void> uploadImageToAppwrite() async {
+    const String projectID = '6566a4a234cbff8753b2';
+    const String apiKey =
+        'bd91bb88dfd03bf21223bee7c6d0c0ee8058e1019df04458c7f16d959dd3a718b3929907a6db428adf929cdc357d03f90ab90f5564a05ac869fc0f2fffd94f472d3f543606299bc7eefffc07ac26c97e93e88d0701fe6aa490f9c3647c951ad88d8d7bb1a8895e89c7828a3d631745a70926ccc5a63cd0c19badc1ec93091170';
+
+    Client client = Client()
+        .setEndpoint('https://cloud.appwrite.io/v1')
+        .setProject(projectID);
+        // .setSelfSigned(status: true);
+
+    client.setJWT(apiKey);
+
+    Databases databases = Databases(client);
+
+    const String databaseID = '6566a53dbc21847ed260';
+    const String collectionID = '6566a54583fece31de3f';
+
+    try {
+      var result = await databases.createDocument(
+        databaseId: databaseID,
+        documentId: ID.unique(),
+        collectionId: collectionID,
+        data: {
+          'imagePath': '[pict]',
+        },
+      );
+      print(result);
+    } catch (e) {
+      print('Error uploading image to Appwrite Database: $e');
+    }
   }
 
   @override
@@ -202,8 +239,8 @@ class _ProfileState extends State<Profile> {
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
                 color: context.watch<ThemeNotifier>().isDarkMode
-                  ? Colors.white
-                  : Colors.black,
+                    ? Colors.white
+                    : Colors.black,
               ),
             ),
           ],
