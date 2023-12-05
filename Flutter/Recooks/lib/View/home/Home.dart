@@ -111,7 +111,6 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        // Use SystemNavigator.pop() to exit the app immediately
         SystemNavigator.pop();
         return false;
       },

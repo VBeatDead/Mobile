@@ -10,7 +10,6 @@ class RecipeController extends GetxController {
     super.onInit();
     fetchRecipes();
   }
-
   Future<void> fetchRecipes() async {
     final response = await http.get(
         Uri.parse('https://www.themealdb.com/api/json/v1/1/search.php?f=b'));
