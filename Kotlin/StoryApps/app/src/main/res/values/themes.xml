@@ -1,0 +1,32 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.StoryApps" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowBackground">#EEEEEE</item>
+        <item name="android:statusBarColor">#053B50</item>
+        <item name="colorPrimary">@color/blue</item>
+    </style>
+
+    <style name="MapTheme.Normal" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowActionBar">true</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowNoTitle">false</item>
+    </style>
+
+    <style name="MapTheme.Hybrid" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowActionBar">true</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowNoTitle">false</item>
+        <!-- Tambahkan atribut lain yang sesuai dengan tema Hybrid -->
+    </style>
+
+    <style name="MapTheme.Terrain" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowActionBar">true</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowNoTitle">false</item>
+        <!-- Tambahkan atribut lain yang sesuai dengan tema Terrain -->
+    </style>
+
+    <style name="Theme.StoryApps" parent="Base.Theme.StoryApps" />
+</resources>
