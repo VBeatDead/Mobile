@@ -38,10 +38,10 @@ void main() {
       );
 
       await tester.tap(find.byIcon(Icons.settings));
-      await tester.pumpAndSettle(); // Wait for animations to complete
+      await tester.pumpAndSettle();
 
       await tester.tap(find.text('Dark Mode'));
-      await tester.pumpAndSettle(); // Wait for animations to complete
+      await tester.pumpAndSettle();
 
       expect(mockThemeNotifier.isDarkMode, true);
     });
@@ -57,10 +57,10 @@ void main() {
       );
 
       await tester.tap(find.byIcon(Icons.settings));
-      await tester.pumpAndSettle(); // Wait for animations to complete
+      await tester.pumpAndSettle();
 
       await tester.tap(find.text('Light Mode'));
-      await tester.pumpAndSettle(); // Wait for animations to complete
+      await tester.pumpAndSettle();
 
       expect(mockThemeNotifier.isDarkMode, false);
     });

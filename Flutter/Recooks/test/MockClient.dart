@@ -10,7 +10,6 @@ class MockClient extends http.BaseClient {
   Future<http.StreamedResponse> send(http.BaseRequest request) async {
     final response = await _handler(request);
 
-    // Convert http.Response to http.StreamedResponse
     return http.StreamedResponse(
       Stream.fromIterable([response.bodyBytes]),
       response.statusCode,
