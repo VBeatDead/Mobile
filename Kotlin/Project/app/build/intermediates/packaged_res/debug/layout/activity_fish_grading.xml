@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_500">
+
+    <TextView
+        android:id="@+id/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:fontFamily="@font/roboto_black"
+        android:text="Marine Grading"
+        android:textColor="@color/off_white"
+        android:textSize="25sp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/uploadCard"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_above="@+id/bottom_navigation"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="420dp"
+        android:focusable="true"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp">
+
+        <RelativeLayout
+            android:id="@+id/tes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/uploadedImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:elevation="1dp"/>
+
+            <ImageView
+                android:id="@+id/uploadIcon"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="65dp"
+                android:contentDescription="upload_icon"
+                android:src="@drawable/add_image"
+                android:elevation="0dp"/>
+
+            <TextView
+                android:id="@+id/uploadText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/uploadIcon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="20dp"
+                android:text="Chosse images"
+                android:textColor="@color/blue_500"
+                android:elevation="0dp"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/off_white"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <RelativeLayout
+        android:id="@+id/white_box"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_above="@+id/bottom_navigation"
+        android:background="@drawable/back_round">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttongaleri"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="250dp"
+            android:background="@drawable/item_round"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_above="@id/buttongrading"
+            android:text="Pilih Dari Galeri"
+            android:textSize="19sp"
+            app:backgroundTint="@color/blue_500" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonkamera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="180dp"
+            android:background="@drawable/item_round"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_above="@id/buttongrading"
+            android:text="Ambil Dari Kamera"
+            android:textSize="19sp"
+            app:backgroundTint="@color/blue_500" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttongrading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/item_round"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_alignParentBottom="true"
+            android:text="Deteksi Kesegaran"
+            android:textSize="19sp"
+            app:backgroundTint="@color/blue_500" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>
