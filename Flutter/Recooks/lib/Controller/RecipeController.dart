@@ -8,10 +8,11 @@ class RecipeController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    fetchRecipes();
+    fetchRecipes(http.Client());
   }
-  Future<void> fetchRecipes() async {
-    final response = await http.get(
+
+  Future<void> fetchRecipes(http.Client client) async {
+    final response = await client.get(
         Uri.parse('https://www.themealdb.com/api/json/v1/1/search.php?f=b'));
 
     if (response.statusCode == 200) {

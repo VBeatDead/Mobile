@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:prak/Controller/ThemeNotifier.dart';
@@ -21,20 +21,20 @@ class _ProfileState extends State<Profile> {
   @override
   void initState() {
     super.initState();
-    fetchUserName();
+    // fetchUserName();
     storageController.onInit();
   }
 
-  Future<void> fetchUserName() async {
-    User? user = FirebaseAuth.instance.currentUser;
-    if (user != null) {
-      String email = user.email ?? '';
-      int atIndex = email.indexOf('@');
-      setState(() {
-        userName = email.substring(0, atIndex);
-      });
-    }
-  }
+  // Future<void> fetchUserName() async {
+  //   User? user = FirebaseAuth.instance.currentUser;
+  //   if (user != null) {
+  //     String email = user.email ?? '';
+  //     int atIndex = email.indexOf('@');
+  //     setState(() {
+  //       userName = email.substring(0, atIndex);
+  //     });
+  //   }
+  // }
 
   // Function to pick image from gallery
   Future<void> _pickImageFromGallery() async {
