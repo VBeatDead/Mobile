@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">StoryApps</string>
+    <string name="btnlogout">btnLogout</string>
+    <string name="btnlogin">btnlogin</string>
+    <string name="pilih_foto">Pilih Foto</string>
+    <string name="kamera">Kamera</string>
+    <string name="deskripsi_cerita">Deskripsi Cerita</string>
+    <string name="tambah_cerita">Tambah Cerita</string>
+    <string name="ambil_gambar">Ambil Gambar</string>
+    <string name="logo">Logo</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="belum_punya_akun">Belum punya akun?</string>
+    <string name="daftar_sekarang">Daftar Sekarang</string>
+    <string name="name">Nama</string>
+    <string name="register">Register</string>
+    <string name="sudah_punya_akun">Sudah punya akun?</string>
+    <string name="login_sekarang">Login Sekarang</string>
+    <string name="btnbahasa">btnbahasa</string>
+    <string name="bahasa">Pilih Bahasa</string>
+    <string name="btnmaps">btnMaps</string>
+    <string name="normal_type">Normal</string>
+    <string name="satellite_type">Satellite</string>
+    <string name="terrain_type">Terrain</string>
+    <string name="hybrid_type">Hybrid</string>
+    <string name="refresh_button_description">refresh_button_description</string>
+</resources>
